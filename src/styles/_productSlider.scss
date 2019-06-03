@@ -1,0 +1,31 @@
+.product-box {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    text-align: center;
+
+}
+
+.product-box__image {
+    height: 80%;
+    
+    .gatsby-image-wrapper {
+        height: 100%;
+        img {
+          margin: 0;
+        }
+      }
+}
+
+.product-box__text {
+    padding: 5px;
+    h5 {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    p {
+        font-size: 0.6rem;
+        font-family: "montserrat";
+        color: red;
+    }
+}
