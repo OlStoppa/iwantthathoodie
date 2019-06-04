@@ -1,8 +1,9 @@
-import React, {useState} from "react"
+import React, {useState,  useContext} from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SizeSelect from "../components/size-select"
+import cartContext from "../context/cartContext"
 
 export default function Product({ data }) {
   const productData = data.markdownRemark
@@ -11,7 +12,15 @@ export default function Product({ data }) {
     setSelected(index)
   }
 
-  console.log(data.slug)
+  const [state, dispatch] = useContext(cartContext)
+console.log(state)
+  const addToCart = () => {
+    dispatch( {
+      type: 'ADD_PRODUCT',
+      title: productData.frontmatter.title,
+      salePrice: productData.frontmatter.salePrice
+    })
+  }
   return (
     <Layout>
       
@@ -39,6 +48,7 @@ export default function Product({ data }) {
           <h2 className="sale-price">Sale Price: {productData.frontmatter.salePrice}</h2>
           <SizeSelect />
           <div dangerouslySetInnerHTML={{ __html: productData.html }} />
+          <button onClick={addToCart}>ADD TO CART</button>
         </div>
       </div>
     </Layout>

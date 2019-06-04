@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext} from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -6,8 +6,13 @@ import Carousel from '../components/carousel'
 import Image from "../components/image"
 import SEO from "../components/seo"
 import ProductSlider from "../components/productSlider"
+import cartContext from "../context/cartContext"
 
-const IndexPage = () => (
+const IndexPage = () => {
+
+const [state, dispatch] = useContext(cartContext)
+console.log(state)
+return(
   <Layout>
     <SEO title="Home" />
     <div className="container-home__top">
@@ -55,5 +60,6 @@ const IndexPage = () => (
     </div>
   </Layout>
 )
+}
 
 export default IndexPage
