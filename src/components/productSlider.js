@@ -1,13 +1,47 @@
 import React from "react"
 import { graphql, StaticQuery, Link} from "gatsby"
 import Img from "gatsby-image"
+import Slider from "react-slick"
+
 
 const ProductSlider = ({data}) => {
 
     const products = data.allMarkdownRemark.edges
-    console.log(products)
+
+    const settings = {
+      
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: true,
+      className: "slider-custom",
+      
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+            
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3
+            
+            
+          }
+        }
+      ]
+      
+      
+    }
+    
     return (
-        <>
+        <div style={{padding: "0 20px", textAlign: "center"}}>
+        <Slider {...settings}>
             {products.map(item => 
             <Link to={item.node.frontmatter.path}>
             <div className="product-box">
@@ -23,7 +57,8 @@ const ProductSlider = ({data}) => {
             </div>
             </div>
             </Link>)}
-        </>
+            </Slider>
+        </div>
     )
 }
 

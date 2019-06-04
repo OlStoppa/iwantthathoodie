@@ -1,18 +1,23 @@
 .product-box {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    height: 100%;
     text-align: center;
+    width: 300px;
+    margin: auto;
 
 }
 
 .product-box__image {
-    height: 80%;
+    height: 325px;
+    padding: 5px;
     
     .gatsby-image-wrapper {
         height: 100%;
+
         img {
           margin: 0;
+          
         }
       }
 }
@@ -28,4 +33,36 @@
         font-family: "montserrat";
         color: red;
     }
+}
+
+ .slider-custom {
+    
+    padding: 10px;
+    
+  .slick-prev, .slick-next {
+    
+    top: 50%;
+    color: black;
+    
+  }
+  .slick-prev {
+    
+    z-index: 1;
+
+    &:before {
+        color: grey;
+        font-size: 3rem;
+    }
+    
+    
+  }
+  .slick-next {
+    right: 5px;
+    z-index: 1;
+    &:before {
+        color: grey;
+        font-size: 3rem;
+    }
+    
+  }
 }

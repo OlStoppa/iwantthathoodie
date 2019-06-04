@@ -3,6 +3,8 @@
 @import '../styles/navbar';
 @import '../styles/carousel';
 @import '../styles/productSlider';
+@import '~slick-carousel/slick/slick.css';
+@import "~slick-carousel/slick/slick-theme.css";
 
 html {
   font-family: sans-serif;
@@ -715,11 +717,34 @@ pre tt:after {
 }
 
 .product-slider {
-  display: flex;
-  height: 300px;
+  height: 400px;
   a {
     text-decoration: none;
     color: black;
+  }
+}
+
+.section-heading {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  span{
+    display: flex;
+    align-items: center;
+    flex: 1;
+     span {
+       background: #e7e7e7;
+       height: 1px;
+       width: 100%;
+     }
+  }
+
+  h4 {
+    margin: 0;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-family: "montserrat";
   }
 }
 

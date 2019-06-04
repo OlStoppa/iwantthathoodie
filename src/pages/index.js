@@ -41,6 +41,15 @@ const IndexPage = () => (
         
       </div>
     </div>
+    <div className="section-heading">
+      <span>
+        <span></span>
+      </span>
+      <h4>New Designs</h4>
+      <span>
+        <span></span>
+      </span>
+    </div>
     <div className="product-slider">
       <ProductSlider />
     </div>
