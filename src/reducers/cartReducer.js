@@ -5,9 +5,14 @@ export const cartReducer = (state, action) => {
         case 'ADD_PRODUCT':
             return [
                 ...state,
-                { title: action.title, salePrice: action.salePrice}
+                { 
+                    title: action.title, 
+                    salePrice: action.salePrice,
+                    image: action.image
+                }
             ]
-
+        case 'REMOVE_PRODUCT':
+            return [...state.filter((item) => item.title !== action.title)]
         default:
             return state
     }

@@ -18,7 +18,8 @@ console.log(state)
     dispatch( {
       type: 'ADD_PRODUCT',
       title: productData.frontmatter.title,
-      salePrice: productData.frontmatter.salePrice
+      salePrice: productData.frontmatter.salePrice,
+      image: productData.frontmatter.image.childImageSharp.fluid
     })
   }
   return (
@@ -65,6 +66,16 @@ export const productQuery = graphql`
         title
         salePrice
         tags
+        image {
+          childImageSharp {
+            resize(width: 1500, height: 1500) {
+              src
+            }
+            fluid(maxWidth: 785) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
 
