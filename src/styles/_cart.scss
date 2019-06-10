@@ -1,0 +1,34 @@
+.cart-item {
+    font-size: 1.2rem;
+    font-family: "montserrat";
+
+    .material-icons {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+.cart--heading {
+    text-align: center;
+}
+
+.cart--main-cell {
+    display: flex;
+    align-items: center;
+    
+}
+
+.cart--main-cell__image {
+    width: 30%;
+}
+
+.checkout-row {
+    display: flex;
+    justify-content: flex-end;
+    h5 {
+    font-size: 1.7rem;
+    font-family: "montserrat";
+    }
+    
+
+}

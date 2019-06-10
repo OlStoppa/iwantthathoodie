@@ -5,21 +5,32 @@ import Layout from "../components/layout"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
 
-export default function Product({ data }) {
+export default function Product  ({ data })  {
   const productData = data.markdownRemark
   const [selectedImage, setSelected] = useState(0)
+  const [size, selectSize] = useState('')
   const selectImage = (index) => {
     setSelected(index)
   }
 
   const [state, dispatch] = useContext(cartContext)
-console.log(state)
+
+  const handleSelectSize = (e) => {
+    console.log(e)
+    selectSize(e)
+  }
+
   const addToCart = () => {
+    if(!size) {
+      alert("please select a size")
+      return
+    }
     dispatch( {
       type: 'ADD_PRODUCT',
       title: productData.frontmatter.title,
       salePrice: productData.frontmatter.salePrice,
-      image: productData.frontmatter.image.childImageSharp.fluid
+      image: productData.frontmatter.image.childImageSharp.fluid,
+      size
     })
   }
   return (
@@ -30,7 +41,9 @@ console.log(state)
         <div className="product-image">
           <div className="image-picker">
               <div className="main-image">
+            {data.allFile.edges &&
             <Img fluid={data.allFile.edges[selectedImage].node.childImageSharp.fluid} />
+            }
             </div>
 
             <div className="thumbs">
@@ -47,7 +60,9 @@ console.log(state)
         <h2 className="title">{productData.frontmatter.title}</h2>
           <h4>List Price: <span className="list-price">{productData.frontmatter.listPrice}</span></h4>
           <h2 className="sale-price">Sale Price: {productData.frontmatter.salePrice}</h2>
-          <SizeSelect />
+          <SizeSelect
+            handleSelectSize={handleSelectSize}
+          />
           <div dangerouslySetInnerHTML={{ __html: productData.html }} />
           <button onClick={addToCart}>ADD TO CART</button>
         </div>

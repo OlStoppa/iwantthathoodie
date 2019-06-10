@@ -6,7 +6,7 @@ import Navbar from "./navbar"
 
 const Header = ({ siteTitle }) => {
 
-  const [state, dispatch] = useContext(cartContext)
+  const [state, dispatch] = useContext(cartContext) 
 return(
   <header
     style={{
@@ -38,7 +38,7 @@ return(
       <Link to="/cart">
       <div className="cart-icon__container">
         <span className="material-icons" >shopping_cart</span>
-        {state.length > 0 && <span className="cart-counter">{state.length}</span>}
+        {state.length > 0 && <span className="cart-counter">{state.reduce((a, b)  => a + b.qty,0 )}</span>}
       </div>
       </Link>
       
