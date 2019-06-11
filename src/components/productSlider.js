@@ -3,10 +3,10 @@ import { graphql, StaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import Slider from "react-slick"
 
-const ProductSlider = ({ data }, props) => {
-  const products = data.allMarkdownRemark.edges.filter(item => !item.node.frontmatter.collections.includes(props.collection))
+const ProductSlider = ({ data, collection }) => {
+  const products = data.allMarkdownRemark.edges.filter(item => item.node.frontmatter.collections[0] === collection)
 
-
+  
   const settings = {
     infinite: true,
     speed: 500,

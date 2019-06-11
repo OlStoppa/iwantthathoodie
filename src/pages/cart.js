@@ -7,12 +7,15 @@ const Cart = () => {
   const remove = product => {
     dispatch({ type: "REMOVE_PRODUCT", index: product })
   }
+  
   return (
     <Layout>
       <div className="cart-container">
         <div className="cart--heading">
           <h2>YOUR SHOPPING CART</h2>
         </div>
+        {state.length > 0 ?
+        <>
         <table>
           <tr>
             <th>Contents</th>
@@ -52,6 +55,11 @@ const Cart = () => {
                 <button>Checkout</button>
             </div>
         </div>
+        </>
+        :
+        <p>Your cart is currently empty.</p>
+        
+        }
       </div>
     </Layout>
   )

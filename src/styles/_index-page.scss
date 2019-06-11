@@ -1,0 +1,144 @@
+.container-home__top {
+    display: flex;
+    height: 500px;
+    @media only screen and (max-width: $breakpoint) {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  
+  .carousel {
+    width: 65%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 5px;
+
+    @media only screen and (max-width: $breakpoint) {
+      width: 100%;
+      height: 300px;
+      
+    }
+    
+  }
+  
+  .carousel-footer {
+    position: relative;
+    z-index: 100;
+    background: rgba(black, .7);
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: space-evenly;
+    @media only screen and (max-width: $breakpoint) {
+      height: 50%;
+      padding: 2rem;
+    }
+  
+    h1 {
+      margin: 0;
+    }
+  }
+  
+  .sale-h1 {
+    font-size: 4rem;
+    color: red;
+    margin: 0;
+
+    @media only screen and (max-width: $breakpoint) {
+      font-size: 3rem;
+    }
+  }
+  
+  .shop-now {
+    background: rgb(228, 226, 226);
+    border: 2px solid rgb(58, 58, 58);
+    color: black;
+    padding: 10px 20px;
+    font-family: "montserrat";
+    font-weight: bold;
+  }
+  
+  .home-top__right {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    position: relative;
+    @media only screen and (max-width: $breakpoint) {
+      width: 100%;
+    }
+  }
+  
+  .home-top__right--box {
+   
+    margin-left: 2%;
+    height: 49.5%;
+    position: relative;
+
+    @media only screen and (max-width: $breakpoint) {
+      height: 100%;
+      margin: 0;
+    }
+  
+    .gatsby-image-wrapper {
+      height: 100%;
+      img {
+        margin: 0;
+      }
+    }
+    
+    &.bottom {
+      margin-top: 5px;
+    }
+    
+  
+  }
+  
+  .box-footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    height: 50%;
+    background: rgba(black, 0.5);
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-slider {
+    height: 400px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+  .section-heading {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    span{
+      display: flex;
+      align-items: center;
+      flex: 1;
+       span {
+         background: #e7e7e7;
+         height: 1px;
+         width: 100%;
+       }
+    }
+  
+    h4 {
+      margin: 0;
+      padding: 10px;
+      font-size: 0.9rem;
+      font-family: "montserrat";
+    }
+  }
