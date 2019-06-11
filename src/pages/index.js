@@ -56,7 +56,9 @@ return(
       </span>
     </div>
     <div className="product-slider">
-      <ProductSlider />
+      <ProductSlider 
+        collection={"pullover"}
+      />
     </div>
   </Layout>
 )

@@ -5,7 +5,7 @@ title: "COOL ANIME HOODIE"
 listPrice: 59.99
 salePrice: 29.99
 
-category: "pullover"
+collections: ["pullover"]
 tags: ["pullover", "hoodie", "animal"]
 image: anime-front.PNG
 

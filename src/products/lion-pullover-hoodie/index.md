@@ -4,7 +4,7 @@ date: "2019-05-27"
 title: "PSYCHEDELIC LION HOODIE"
 listPrice: 59.99
 salePrice: 29.99
-category: "pullover"
+collections: ["pullover"]
 tags: ["pullover", "hoodie", "animal"]
 image: lion-hoodie.jpg
 

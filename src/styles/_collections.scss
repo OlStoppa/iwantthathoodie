@@ -1,0 +1,20 @@
+.collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+    text-decoration: none;
+    color: black;
+    }
+}
+
+.collection--product-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    width: 275px;
+    margin: auto;
+
+    
+}

@@ -18,6 +18,7 @@ exports.createPages = ({actions, graphql}) => {
     const { createPage } = actions;
 
     const productTemplate = path.resolve('src/templates/product.js');
+    const collectionTemplate = path.resolve('src/templates/collections.js');
     
 
     return graphql(`
@@ -33,7 +34,7 @@ exports.createPages = ({actions, graphql}) => {
                       path
                       title
                       
-                      tags
+                      collections
                       
                     }
                   }
@@ -54,6 +55,26 @@ exports.createPages = ({actions, graphql}) => {
                   slug: node.fields.slug
                 }
             })
+        })
+
+        let collections = []
+
+        _.each(products, edge => {
+          if(_.get(edge, "node.frontmatter.collections")) {
+            collections = collections.concat(edge.node.frontmatter.collections)
+          }
+        })
+
+        collections = _.uniq(collections)
+
+        collections.forEach(collection => {
+          createPage({
+            path: `/collection/${_.kebabCase(collection)}/`,
+            component: collectionTemplate,
+            context: {
+              collection
+            }
+          })
         })
 
        

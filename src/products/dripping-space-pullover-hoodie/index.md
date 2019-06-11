@@ -5,7 +5,7 @@ title: "DRIPPING SPACE HOODIE"
 listPrice: 59.99
 salePrice: 29.99
 
-category: "pullover"
+collections: ["pullover"]
 tags: ["pullover", "hoodie", "animal"]
 image: space-paint-front.PNG
 

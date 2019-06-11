@@ -8,17 +8,12 @@ const Header = ({ siteTitle }) => {
 
   const [state, dispatch] = useContext(cartContext) 
 return(
-  <header
-    style={{
-      background: `black`,
-      marginBottom: `0.75rem`,
-    }}
-  >
+  <header>
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: 1200,
+        padding: `0.5rem 1.45rem 0rem`,
         display: 'flex',
         justifyContent: 'space-between'
       }}

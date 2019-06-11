@@ -6,6 +6,7 @@
 @import '~slick-carousel/slick/slick.css';
 @import "~slick-carousel/slick/slick-theme.css";
 @import "../styles/cart";
+@import "../styles/collections";
 
 html {
   font-family: sans-serif;
@@ -750,6 +751,12 @@ pre tt:after {
 }
 
 header {
+  background: rgba(black, 0.9);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-bottom: 0.45rem;
   span {
     float: right;
   }
