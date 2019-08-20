@@ -1,11 +1,12 @@
 .container__product {
     display: flex;
-    
+    height: 100vh;
     width: 100%;
 
     @media only screen and (max-width: $breakpoint) {
         flex-direction: column;
         align-items: center;
+        height: auto;
       }
     
 }

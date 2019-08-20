@@ -7,6 +7,10 @@ import cartContext from "../context/cartContext"
 
 export default function Product({ data }) {
   const productData = data.markdownRemark
+
+  const images = data.allFile.edges;
+  
+  const orderedImages = productData.frontmatter.image.childImageSharp.fluid.src === images[1].node.childImageSharp.fluid.src ? [images[1], images[0]] : images;
   const [selectedImage, setSelected] = useState(0)
   const [size, selectSize] = useState("")
   const selectImage = index => {
@@ -42,14 +46,14 @@ export default function Product({ data }) {
               {data.allFile.edges && (
                 <Img
                   fluid={
-                    data.allFile.edges[selectedImage].node.childImageSharp.fluid
+                    orderedImages[selectedImage].node.childImageSharp.fluid
                   }
                 />
               )}
             </div>
 
             <div className="thumbs">
-              {data.allFile.edges.map(({ node }, index) => (
+              {orderedImages.map(({ node }, index) => (
                 <div
                   className={
                     selectedImage === index ? "thumb selected" : "thumb"

@@ -1,6 +1,28 @@
 .cart-item {
     font-size: 1.2rem;
     font-family: "montserrat";
+    
+    @media(max-width: $breakpoint) {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: space-between;
+        padding: 1rem;
+        align-items: center;
+        border-bottom: 1px grey solid;
+
+        >td:nth-child(1) {
+            display: block;
+            width: 100%;
+            
+        }
+
+        >td {
+            border: none;
+            display: inline-block;
+        }
+        
+    }
 
     .material-icons {
         font-size: 2rem;
@@ -10,16 +32,40 @@
 
 .cart--heading {
     text-align: center;
+    
+
+}
+
+.table-headings {
+    @media(max-width: $breakpoint) {
+        display: none;
+        
+    }
 }
 
 .cart--main-cell {
     display: flex;
     align-items: center;
+    @media(max-width: $breakpoint) {
+        
+        flex-direction: column;
+        
+        width: 100%;
+        
+        
+        
+    }
     
 }
 
 .cart--main-cell__image {
     width: 30%;
+
+    @media(max-width: $breakpoint) {
+        
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .checkout-row {
@@ -29,10 +75,16 @@
     font-size: 1.7rem;
     font-family: "montserrat";
     }
+
+    @media(max-width: $breakpoint) {
+        justify-content: center;
+        
+    }
     
 
 }
 
 .cart-container {
     text-align: center;
+
 }

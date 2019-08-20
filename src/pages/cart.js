@@ -17,7 +17,8 @@ const Cart = () => {
         {state.length > 0 ?
         <>
         <table>
-          <tr>
+          <tbody>
+          <tr className="table-headings">
             <th>Contents</th>
 
             <th>Qty</th>
@@ -32,7 +33,9 @@ const Cart = () => {
                     <div className="cart--main-cell__image">
                       <Img fluid={item.image} />
                     </div>
+                    <div style={{display: "block"}}>
                     {item.title} - {item.size}
+                    </div>
                   </div>
                 </td>
                 <td>{item.qty}</td>
@@ -48,6 +51,7 @@ const Cart = () => {
               </tr>
             )
           })}
+          </tbody>
         </table>
         <div className="checkout-row">
             <div className="checkout">
