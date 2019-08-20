@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React, {useContext} from "react"
 import  cartContext  from "../context/cartContext"
 import Navbar from "./navbar"
+import Logo from "../images/hoodie-logo.inline.svg"
 
 const Header = ({ siteTitle }) => {
 
@@ -18,7 +19,7 @@ return(
         justifyContent: 'space-between'
       }}
     >
-      <h3 style={{ margin: 0 }}>
+      
         <Link
           to="/"
           style={{
@@ -26,10 +27,10 @@ return(
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <Logo className="logo"/>
         </Link>
         
-      </h3>
+      
       <Link to="/cart">
       <div className="cart-icon__container">
         <span className="material-icons" >shopping_cart</span>

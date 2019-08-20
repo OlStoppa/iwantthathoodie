@@ -11,6 +11,7 @@
 @import "../styles/cart";
 @import "../styles/collections";
 @import "../styles/footer";
+@import "../styles/button";
 
 html {
   font-family: sans-serif;
@@ -119,7 +120,7 @@ hr {
   height: 0;
   overflow: visible;
 }
-button,
+
 input,
 optgroup,
 select,
