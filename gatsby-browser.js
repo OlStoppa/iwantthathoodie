@@ -2,7 +2,6 @@
 
 
 import React from "react"
-
 import { CartProvider } from "./src/context/cartContext"
 import {cartReducer} from "./src/reducers/cartReducer"
 

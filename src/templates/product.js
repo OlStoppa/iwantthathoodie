@@ -4,13 +4,25 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
+import ProductInfo from "../components/productInfo"
+import Share from "../components/share"
+import ProductImagePicker from "../components/productImagePicker"
 
 export default function Product({ data }) {
+
+  
+    
   const productData = data.markdownRemark
 
-  const images = data.allFile.edges;
-  
-  const orderedImages = productData.frontmatter.image.childImageSharp.fluid.src === images[1].node.childImageSharp.fluid.src ? [images[1], images[0]] : images;
+  const images = data.allFile.edges
+
+  const orderedImages =
+      productData.frontmatter.image.childImageSharp.fluid.src !==
+      images[0].node.childImageSharp.fluid.src
+        ? [images[1], images[0]]
+        : images
+
+ 
   const [selectedImage, setSelected] = useState(0)
   const [size, selectSize] = useState("")
   const selectImage = index => {
@@ -40,32 +52,12 @@ export default function Product({ data }) {
   return (
     <Layout>
       <div className="container__product">
-        <div className="product-image">
-          <div className="image-picker">
-            <div className="main-image">
-              {data.allFile.edges && (
-                <Img
-                  fluid={
-                    orderedImages[selectedImage].node.childImageSharp.fluid
-                  }
-                />
-              )}
-            </div>
-
-            <div className="thumbs">
-              {orderedImages.map(({ node }, index) => (
-                <div
-                  className={
-                    selectedImage === index ? "thumb selected" : "thumb"
-                  }
-                  onClick={() => selectImage(index)}
-                >
-                  <Img key={index} fluid={node.childImageSharp.fluid} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        
+        <ProductImagePicker
+          orderedImages={orderedImages}
+          selectedImage={selectedImage}
+          selectImage={selectImage}
+         />
 
         <div className="product-data">
           <h2 className="title">{productData.frontmatter.title}</h2>
@@ -81,6 +73,15 @@ export default function Product({ data }) {
           <SizeSelect handleSelectSize={handleSelectSize} />
           <div dangerouslySetInnerHTML={{ __html: productData.html }} />
           <button onClick={addToCart}>ADD TO CART</button>
+          <ProductInfo />
+          <Share url={productData.frontmatter.path} />
+          <div className="product-options">
+            <ul>
+              <li>Shipping</li>
+              <li>Returns</li>
+              <li>Contact</li>
+            </ul>
+          </div>
         </div>
       </div>
     </Layout>

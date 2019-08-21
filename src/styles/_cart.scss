@@ -2,7 +2,7 @@
     font-size: 1.2rem;
     font-family: "montserrat";
     
-    @media(max-width: $breakpoint) {
+    @media(max-width: 480px) {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
@@ -16,6 +16,9 @@
             width: 100%;
             
         }
+        td:nth-child(3) {
+            order:1;
+        }
 
         >td {
             border: none;
@@ -24,10 +27,7 @@
         
     }
 
-    .material-icons {
-        font-size: 2rem;
-        cursor: pointer;
-    }
+    
 }
 
 .cart--heading {

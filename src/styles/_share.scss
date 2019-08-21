@@ -1,0 +1,13 @@
+.share-block {
+    display: flex;
+    align-items: center;
+    
+}
+
+.share-block::before {
+    content: "Share:";
+    height: 100%;
+    font-family: "montserrat";
+    font-weight: 500;
+    margin-right: 10px;
+}

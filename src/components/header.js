@@ -4,8 +4,9 @@ import React, {useContext} from "react"
 import  cartContext  from "../context/cartContext"
 import Navbar from "./navbar"
 import Logo from "../images/hoodie-logo.inline.svg"
+import MenuBtn from "./menuBtn";
 
-const Header = ({ siteTitle }) => {
+const Header = ( props) => {
 
   const [state, dispatch] = useContext(cartContext) 
 return(
@@ -16,10 +17,15 @@ return(
         maxWidth: 1200,
         padding: `0.5rem 1.45rem 0rem`,
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: "center"
       }}
     >
-      
+     
+     <MenuBtn 
+     toggleDrawer={props.toggleDrawer}
+     isOpen={props.isOpen}
+     />
         <Link
           to="/"
           style={{

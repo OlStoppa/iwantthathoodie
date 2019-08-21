@@ -26,8 +26,12 @@
     margin-bottom: 50px;
     width: 100%;
     flex: 1;
+    height: 700px;
 
-    
+    .gatsby-image-wrapper {
+        height: inherit;
+        width: auto;
+    }
        
 }
 
@@ -43,6 +47,7 @@
 
 .product-data {
     flex: 1;
+    
     @media only screen and (max-width: $breakpoint) {
         display: flex;
         align-items: center;
@@ -76,4 +81,21 @@
 
 .sale-price {
     color: rgb(196, 43, 43);
+}
+
+.product-options {
+    margin-top: 1rem;
+    ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    
+    font-family: "montserrat";
+    font-weight: 600;
+
+    li {
+        border-right: 1px grey solid;
+        padding: 10px;
+    }
+    }
 }
