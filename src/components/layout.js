@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Drawer from "./drawer"
 import Header from "./header"
 import Footer from "./footer"
+
 import "./index.scss"
 
 const Layout = ({ children }) => {
@@ -34,6 +35,7 @@ return(
     
     render={data => (
       <div className="site-container">
+        
         <Header 
         siteTitle={data.site.siteMetadata.title}
         toggleDrawer={toggleDrawer}

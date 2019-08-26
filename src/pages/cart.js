@@ -1,63 +1,26 @@
-import React, { useContext, useEffect } from "react"
-import { useStaticQuery, graphql} from "gatsby"
+import React, { useContext } from "react"
 import Img from "gatsby-image"
 import cartContext from "../context/cartContext"
 import Layout from "../components/layout"
+import Paypal from "../components/paypal"
+
 
 const Cart = () => {
   const [state, dispatch] = useContext(cartContext)
-  let stripe
-  useEffect(() => {
-    
-    stripe = window.Stripe('pk_test_xAWn75YLPUHCnnZufMNVkmc400sZ7mb3rc')
-    
-  })
+  
 
-  const data = useStaticQuery(graphql`
-    query SkuQuery {
-      allStripeSku {
-        edges {
-          node {
-            id,
-            attributes {
-              name
-            }
-            
-          }
-        }
-      }
-    }
-  `)
+  const total = state.reduce((a, b) => { return a + b.salePrice * b.qty},0)
 
-  console.log(data)
+  
   const remove = product => {
     dispatch({ type: "REMOVE_PRODUCT", index: product })
   }
 
-  const checkOut = async () => {
-    
-    const items = state.map((product) => {
-      console.log(`${product.title} - ${product.size}`)
-      const sku = data.allStripeSku.edges.find((element) => element.node.attributes.name === `${product.title} - ${product.size}`) 
-       
-      return {
-        sku: sku.node.id,
-        quantity: product.qty
-      }
-    })
-     await stripe.redirectToCheckout({
-    items,
-    successUrl: 'https://example.com/success',
-    cancelUrl: 'https://example.com/cancel',
-  }).then((result) => {
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `result.error.message`.
-  });
-}
+
   
   return (
     <Layout>
+      
       <div className="cart-container">
         <div className="cart--heading">
           <h2>YOUR SHOPPING CART</h2>
@@ -103,8 +66,12 @@ const Cart = () => {
         </table>
         <div className="checkout-row">
             <div className="checkout">
-                <h5>Cart Total: ${state.reduce((a, b) => { return a + b.salePrice * b.qty},0)}</h5>
-                <button onClick={checkOut}>Checkout</button>
+                <h5>Cart Total: ${total}</h5>
+                 
+                <Paypal
+                  cart={state}
+                  total={total}
+                />
             </div>
         </div>
         </>
