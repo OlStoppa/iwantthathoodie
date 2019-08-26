@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
@@ -49,6 +48,8 @@ export default function Product({ data }) {
       size,
     })
   }
+
+ 
   return (
     <Layout>
       <div className="container__product">

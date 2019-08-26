@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `iwatthathoodie.com`,
@@ -5,7 +7,16 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-stripe`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: [ 'Sku'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true
+      }
+    },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
