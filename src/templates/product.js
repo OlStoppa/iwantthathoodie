@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SizeSelect from "../components/size-select"
@@ -8,20 +8,16 @@ import Share from "../components/share"
 import ProductImagePicker from "../components/productImagePicker"
 
 export default function Product({ data }) {
-
-  
-    
   const productData = data.markdownRemark
 
   const images = data.allFile.edges
 
   const orderedImages =
-      productData.frontmatter.image.childImageSharp.fluid.src !==
-      images[0].node.childImageSharp.fluid.src
-        ? [images[1], images[0]]
-        : images
+    productData.frontmatter.image.childImageSharp.fluid.src !==
+    images[0].node.childImageSharp.fluid.src
+      ? [images[1], images[0]]
+      : images
 
- 
   const [selectedImage, setSelected] = useState(0)
   const [size, selectSize] = useState("")
   const selectImage = index => {
@@ -31,7 +27,6 @@ export default function Product({ data }) {
   const [state, dispatch] = useContext(cartContext)
 
   const handleSelectSize = e => {
-    console.log(e)
     selectSize(e)
   }
 
@@ -49,16 +44,14 @@ export default function Product({ data }) {
     })
   }
 
- 
   return (
     <Layout>
       <div className="container__product">
-        
         <ProductImagePicker
           orderedImages={orderedImages}
           selectedImage={selectedImage}
           selectImage={selectImage}
-         />
+        />
 
         <div className="product-data">
           <h2 className="title">{productData.frontmatter.title}</h2>

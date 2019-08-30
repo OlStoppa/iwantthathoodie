@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 
 const Collections = ({ pageContext, data }) => {
-  const { collection } = pageContext
+  // const { collection } = pageContext
   const { edges } = data.allMarkdownRemark
 
   return (
@@ -15,7 +15,7 @@ const Collections = ({ pageContext, data }) => {
         
         <div className="collection-container">
           {edges.map(({ node }) => {
-            const { slug } = node.fields
+            
             const { title, image, path, salePrice } = node.frontmatter
             return (
               <Link to={path}>
