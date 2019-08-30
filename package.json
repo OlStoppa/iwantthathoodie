@@ -1,7 +1,7 @@
 {
   "name": "this-hoodie",
   "private": true,
-  "description": "The coolest hoodies",
+  "description": "The coolest hoodies and t-shirts",
   "version": "0.1.0",
   "author": "this-hoodie",
   "dependencies": {
