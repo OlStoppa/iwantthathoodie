@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
+require('dotenv').config()
 
 export default function HTML(props) {
+
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -12,7 +14,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script src="https://www.paypal.com/sdk/js?client-id='AaTvtmdJMWi_wAqfWgZdKXkhafg3ynmjUTSm1mP9YY4DQ3Sp4K0xTUZj5EeXCkjmdkzEHSqpi-vMxP7H'"/>
+        <script src={`https://www.paypal.com/sdk/js?client-id=${process.env.GATSBY_PAYPAL_CLIENT_ID}`}/>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

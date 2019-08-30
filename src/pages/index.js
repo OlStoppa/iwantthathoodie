@@ -9,8 +9,9 @@ import ProductSlider from "../components/productSlider"
 import cartContext from "../context/cartContext"
 
 const IndexPage = () => {
+  
   const [state, dispatch] = useContext(cartContext)
-  console.log(state)
+  
   return (
     <Layout>
       <SEO title="Home" />

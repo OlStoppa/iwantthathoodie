@@ -1,4 +1,4 @@
-import React, {useReducer, useEffect} from "react"
+import React, {useReducer, useEffect, useState} from "react"
 
 
 
@@ -8,9 +8,16 @@ const CartContext = React.createContext()
 const CartProvider = (props) => { 
     
     const [state, dispatch] = useReducer(props.cartReducer, props.initialState, () => {
-        const localData = localStorage.getItem("hoodieCart");
-        return localData ? JSON.parse(localData) : [];
+
+        const localData = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("hoodieCart")) : undefined
+        return localData ? localData : []
     })
+
+
+ 
+    
+
+    
 
     useEffect(() => {
         localStorage.setItem("hoodieCart", JSON.stringify(state))

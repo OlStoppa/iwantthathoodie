@@ -1,5 +1,6 @@
 
 
+
 export const cartReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_PRODUCT':
@@ -33,6 +34,9 @@ export const cartReducer = (state, action) => {
         }
         case 'REMOVE_PRODUCT':
             return [...state.filter((item, index) => index !== action.index)]
+
+        case 'EMPTY_CART': 
+            return []
         default:
             return state
     }
