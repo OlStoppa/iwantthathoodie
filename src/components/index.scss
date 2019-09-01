@@ -644,7 +644,7 @@ pre tt:after {
 main{
   width: 1200px; 
 
-  @media only screen and (max-width: $breakpoint) {
+  @media only screen and (max-width: 1200px) {
     width: 100vw;
   }
 }

@@ -30,7 +30,12 @@
     "typeface-montserrat": "0.0.54"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.11",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.17.1",
+    "react-test-renderer": "^16.9.0"
   },
   "keywords": [
     "gatsby"
@@ -42,7 +47,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
