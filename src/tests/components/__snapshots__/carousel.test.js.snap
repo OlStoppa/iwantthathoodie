@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="top-image-container top"
+  >
+    <div
+      class=" gatsby-image-wrapper"
+      style="position: relative; overflow: hidden;"
+    >
+      <div
+        style="width: 100%; padding-bottom: 66.66666666666667%;"
+      />
+      <img
+        alt=""
+        src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB6uLQxSKH/8QAGhAAAwEAAwAAAAAAAAAAAAAAAAECAxMhIv/aAAgBAQABBQJFtql6JZrpXNPR/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAEREkEQgf/aAAgBAQAGPwITsq6ieRkpHp//xAAaEAEAAwADAAAAAAAAAAAAAAABABEhQVFh/9oACAEBAAE/ISVCIANCIOK4mMyNVoV3ME9T/9oADAMBAAIAAwAAABBs/wD/xAAXEQADAQAAAAAAAAAAAAAAAAABECEx/9oACAEDAQE/EBtX/8QAFREBAQAAAAAAAAAAAAAAAAAAAHH/2gAIAQIBAT8QV//EABsQAQACAwEBAAAAAAAAAAAAAAEAESExUUGB/9oACAEBAAE/EBDETAbYL43O7jS701FRiCTXErWBXPyJKzac2z//2Q=="
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; transition-delay: 500ms; transition: inherit;"
+      />
+      <picture>
+        <img
+          alt=""
+          sizes="(max-width: 1300px) 100vw, 1300px"
+          src="/static/3d918829ff7c56c4d1585f9db25d00db/91194/daytime-facial-expression-fashion-859057.jpg"
+          srcset="/static/3d918829ff7c56c4d1585f9db25d00db/c6906/daytime-facial-expression-fashion-859057.jpg 325w,
+/static/3d918829ff7c56c4d1585f9db25d00db/00201/daytime-facial-expression-fashion-859057.jpg 650w,
+/static/3d918829ff7c56c4d1585f9db25d00db/91194/daytime-facial-expression-fashion-859057.jpg 1300w,
+/static/3d918829ff7c56c4d1585f9db25d00db/15715/daytime-facial-expression-fashion-859057.jpg 1950w,
+/static/3d918829ff7c56c4d1585f9db25d00db/f234e/daytime-facial-expression-fashion-859057.jpg 2600w,
+/static/3d918829ff7c56c4d1585f9db25d00db/962d5/daytime-facial-expression-fashion-859057.jpg 5265w"
+          style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: inherit;"
+        />
+      </picture>
+      <noscript>
+        &lt;picture&gt;&lt;img loading="lazy" sizes="(max-width: 1300px) 100vw, 1300px" srcset="/static/3d918829ff7c56c4d1585f9db25d00db/c6906/daytime-facial-expression-fashion-859057.jpg 325w,
+/static/3d918829ff7c56c4d1585f9db25d00db/00201/daytime-facial-expression-fashion-859057.jpg 650w,
+/static/3d918829ff7c56c4d1585f9db25d00db/91194/daytime-facial-expression-fashion-859057.jpg 1300w,
+/static/3d918829ff7c56c4d1585f9db25d00db/15715/daytime-facial-expression-fashion-859057.jpg 1950w,
+/static/3d918829ff7c56c4d1585f9db25d00db/f234e/daytime-facial-expression-fashion-859057.jpg 2600w,
+/static/3d918829ff7c56c4d1585f9db25d00db/962d5/daytime-facial-expression-fashion-859057.jpg 5265w" src="/static/3d918829ff7c56c4d1585f9db25d00db/91194/daytime-facial-expression-fashion-859057.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+      </noscript>
+    </div>
+  </div>
+  <div
+    class="top-image-container next"
+  >
+    <div
+      class=" gatsby-image-wrapper"
+      style="position: relative; overflow: hidden;"
+    >
+      <div
+        style="width: 100%; padding-bottom: 66.66666666666667%;"
+      />
+      <img
+        alt=""
+        src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUCBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAGnxJo2GEf/xAAaEAEAAgMBAAAAAAAAAAAAAAABAgMRISMx/9oACAEBAAEFAjzLYzQbJcabklPb/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BJ//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAABAhARMXH/2gAIAQEABj8CE1JrDqXDVf/EABkQAQADAQEAAAAAAAAAAAAAAAEAESExQf/aAAgBAQABPyGhZ4RBQBolbR5EnpCHhmewm8//2gAMAwEAAgADAAAAEPj/AP/EABYRAAMAAAAAAAAAAAAAAAAAABARQf/aAAgBAwEBPxBKP//EABURAQEAAAAAAAAAAAAAAAAAAAAh/9oACAECAQE/EFf/xAAcEAEAAwADAQEAAAAAAAAAAAABABEhUWFxofD/2gAIAQEAAT8QTkALXghmSFu2Gfu4ZQW2esy7Sov3IEKGaeEfsspbCse5/9k="
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; transition-delay: 500ms; transition: inherit;"
+      />
+      <picture>
+        <img
+          alt=""
+          sizes="(max-width: 1300px) 100vw, 1300px"
+          src="/static/8565d81975436f1659bbbbf123d543ad/91194/beautiful-bright-colours-colors-1158670.jpg"
+          srcset="/static/8565d81975436f1659bbbbf123d543ad/c6906/beautiful-bright-colours-colors-1158670.jpg 325w,
+/static/8565d81975436f1659bbbbf123d543ad/00201/beautiful-bright-colours-colors-1158670.jpg 650w,
+/static/8565d81975436f1659bbbbf123d543ad/91194/beautiful-bright-colours-colors-1158670.jpg 1300w,
+/static/8565d81975436f1659bbbbf123d543ad/15715/beautiful-bright-colours-colors-1158670.jpg 1950w,
+/static/8565d81975436f1659bbbbf123d543ad/f234e/beautiful-bright-colours-colors-1158670.jpg 2600w,
+/static/8565d81975436f1659bbbbf123d543ad/39b3c/beautiful-bright-colours-colors-1158670.jpg 5472w"
+          style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: inherit;"
+        />
+      </picture>
+      <noscript>
+        &lt;picture&gt;&lt;img loading="lazy" sizes="(max-width: 1300px) 100vw, 1300px" srcset="/static/8565d81975436f1659bbbbf123d543ad/c6906/beautiful-bright-colours-colors-1158670.jpg 325w,
+/static/8565d81975436f1659bbbbf123d543ad/00201/beautiful-bright-colours-colors-1158670.jpg 650w,
+/static/8565d81975436f1659bbbbf123d543ad/91194/beautiful-bright-colours-colors-1158670.jpg 1300w,
+/static/8565d81975436f1659bbbbf123d543ad/15715/beautiful-bright-colours-colors-1158670.jpg 1950w,
+/static/8565d81975436f1659bbbbf123d543ad/f234e/beautiful-bright-colours-colors-1158670.jpg 2600w,
+/static/8565d81975436f1659bbbbf123d543ad/39b3c/beautiful-bright-colours-colors-1158670.jpg 5472w" src="/static/8565d81975436f1659bbbbf123d543ad/91194/beautiful-bright-colours-colors-1158670.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+      </noscript>
+    </div>
+  </div>
+</DocumentFragment>
+`;

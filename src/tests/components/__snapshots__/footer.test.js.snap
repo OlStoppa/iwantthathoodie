@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="footer"
+  >
+    <div
+      class="footer--inner"
+    >
+      © 2019 iwantthathoodie.com
+    </div>
+  </div>
+</DocumentFragment>
+`;

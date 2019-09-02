@@ -6,7 +6,7 @@ import Navbar from "./navbar"
 import Logo from "../images/hoodie-logo.inline.svg"
 import MenuBtn from "./menuBtn";
 
-const Header = ( props) => {
+const Header = (props) => {
 
   const [state, dispatch] = useContext(cartContext) 
 return(
@@ -40,7 +40,7 @@ return(
       <Link to="/cart">
       <div className="cart-icon__container">
         <span className="material-icons" >shopping_cart</span>
-        {state.length > 0 && <span className="cart-counter">{state.reduce((a, b)  => a + b.qty,0 )}</span>}
+        {state.length > 0 && <span data-testid="cart-counter" className="cart-counter">{state.reduce((a, b)  => a + b.qty,0 )}</span>}
       </div>
       </Link>
       

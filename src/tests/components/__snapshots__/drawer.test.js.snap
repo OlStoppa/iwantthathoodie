@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="drawer"
+  >
+    <div
+      class="mobile-nav-container"
+    >
+      <ul>
+        <a
+          href="/contact"
+        >
+          <li>
+            Contact Us
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
