@@ -1,6 +1,6 @@
 import React from "react"
 import { render, cleanup } from "@testing-library/react"
-import Image from "../../components/image"
+import { PureImage as Image } from "../../components/image"
 
 const data = {
   images: {
@@ -221,7 +221,9 @@ const data = {
   },
 }
 
+afterEach(cleanup);
+
 test("renders correctly with props", () => {
   const { container } = render(<Image data={data} filename={"festival.jpg"} />)
-  expect(container().firstChild()).toHaveClass("gatsby-image-wrapper")
+  expect(container.firstChild).toHaveClass("gatsby-image-wrapper")
 })
