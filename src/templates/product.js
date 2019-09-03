@@ -2,18 +2,18 @@ import React, { useState, useContext } from "react"
 import { graphql } from "gatsby"
 import Modal from "react-modal"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
 import ProductInfo from "../components/productInfo"
 import Share from "../components/share"
 import ProductImagePicker from "../components/productImagePicker"
+import ProductModalInner from "../components/productModalInner"
 
 export default function Product({ data }) {
   const [state, dispatch] = useContext(cartContext)
   const [selectedImage, setSelected] = useState(0)
   const [size, selectSize] = useState("")
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(undefined)
   
   const productData = data.markdownRemark
 
@@ -30,8 +30,8 @@ export default function Product({ data }) {
     setSelected(index)
   }
 
-  const toggleModal = () => {
-    setModalOpen(!modalOpen)
+  const closeModal = () => {
+    setModalOpen(undefined)
   }
 
  
@@ -77,26 +77,24 @@ export default function Product({ data }) {
           <SizeSelect handleSelectSize={handleSelectSize} />
           <div dangerouslySetInnerHTML={{ __html: productData.html }} />
           <button onClick={addToCart}>ADD TO CART</button>
-          <h4 onClick={toggleModal}>See Size Chart</h4>
+          <h4 onClick={() => setModalOpen('size')}>See Size Chart</h4>
           <ProductInfo />
           <Share url={productData.frontmatter.path} />
           <div className="product-options">
             <ul>
-              <li>Shipping</li>
-              <li>Returns</li>
-              <li>Contact</li>
+              <li onClick={() => setModalOpen('shipping')}>Shipping</li>
+              <li onClick={() => setModalOpen('returns')}>Returns</li>
+              <li onClick={() => setModalOpen('contact')}>Contact</li>
             </ul>
           </div>
         </div>
       </div>
       <Modal
-        isOpen={modalOpen}
-        onRequestClose={toggleModal}
+        isOpen={!!modalOpen}
+        onRequestClose={closeModal}
         className="modal"
       >
-        <div className="size-chart-wrapper">
-        <Image filename="size-chart.png"/>
-        </div>
+       <ProductModalInner content={modalOpen}/> 
       </Modal>
     </Layout>
   )

@@ -46,6 +46,8 @@ text-align: center;
 
 @media (max-width: $breakpoint) {
     width: 100vw;
+    height: 50%;
+    overflow: scroll;
 }
 
 
