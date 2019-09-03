@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout renders correctly with children 1`] = `
+<div>
+  <div
+    class="site-container"
+  >
+    <header>
+      <div
+        style="margin: 0px auto; max-width: 1200px; padding: 0.5rem 1.45rem 0rem; display: flex; justify-content: space-between; align-items: center;"
+      >
+        <div
+          class="menu-btn"
+        >
+          <div
+            class="btn-line"
+          />
+          <div
+            class="btn-line"
+          />
+          <div
+            class="btn-line"
+          />
+        </div>
+        <a
+          href="/"
+          style="color: white; text-decoration: none;"
+        >
+          <test-file-stub
+            classname="logo"
+          />
+        </a>
+        <a
+          href="/cart"
+        >
+          <div
+            class="cart-icon__container"
+          >
+            <span
+              class="material-icons"
+            >
+              shopping_cart
+            </span>
+          </div>
+        </a>
+      </div>
+      <nav
+        class="navbar"
+      >
+        <ul>
+          <a
+            href="/collection/pullover"
+          >
+            <li>
+              PULLOVERS
+            </li>
+          </a>
+          <li>
+            ZIP-UPS
+          </li>
+          <a
+            href="/collection/t-shirt"
+          >
+            <li>
+              T-SHIRTS
+            </li>
+          </a>
+          <li>
+            NEW
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      class="drawer"
+    >
+      <div
+        class="mobile-nav-container"
+      >
+        <ul>
+          <a
+            href="/contact"
+          >
+            <li>
+              Contact Us
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div
+      style="margin: 0px auto; max-width: 1200px; padding: 0px 0px 1.45rem 0px; flex-grow: 1;"
+    >
+      <main>
+        <div>
+          hoodie test
+        </div>
+      </main>
+    </div>
+    <div
+      class="footer"
+    >
+      <div
+        class="footer--inner"
+      >
+        © 2019 iwantthathoodie.com
+      </div>
+    </div>
+  </div>
+</div>
+`;

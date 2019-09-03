@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 export const PureImage = ({ data, filename, alt }) => {
-  console.log(filename)
 
   const image = data.images.edges.find(n => {
     return n.node.relativePath.includes(filename)
