@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react"
 import { graphql } from "gatsby"
+import Modal from "react-modal"
 import Layout from "../components/layout"
+import Image from "../components/image"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
 import ProductInfo from "../components/productInfo"
@@ -8,6 +10,11 @@ import Share from "../components/share"
 import ProductImagePicker from "../components/productImagePicker"
 
 export default function Product({ data }) {
+  const [state, dispatch] = useContext(cartContext)
+  const [selectedImage, setSelected] = useState(0)
+  const [size, selectSize] = useState("")
+  const [modalOpen, setModalOpen] = useState(false)
+  
   const productData = data.markdownRemark
 
   const images = data.allFile.edges
@@ -18,13 +25,16 @@ export default function Product({ data }) {
       ? [images[1], images[0]]
       : images
 
-  const [selectedImage, setSelected] = useState(0)
-  const [size, selectSize] = useState("")
+  
   const selectImage = index => {
     setSelected(index)
   }
 
-  const [state, dispatch] = useContext(cartContext)
+  const toggleModal = () => {
+    setModalOpen(!modalOpen)
+  }
+
+ 
 
   const handleSelectSize = e => {
     selectSize(e)
@@ -67,6 +77,7 @@ export default function Product({ data }) {
           <SizeSelect handleSelectSize={handleSelectSize} />
           <div dangerouslySetInnerHTML={{ __html: productData.html }} />
           <button onClick={addToCart}>ADD TO CART</button>
+          <h4 onClick={toggleModal}>See Size Chart</h4>
           <ProductInfo />
           <Share url={productData.frontmatter.path} />
           <div className="product-options">
@@ -78,6 +89,15 @@ export default function Product({ data }) {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={modalOpen}
+        onRequestClose={toggleModal}
+        className="modal"
+      >
+        <div className="size-chart-wrapper">
+        <Image filename="size-chart.png"/>
+        </div>
+      </Modal>
     </Layout>
   )
 }

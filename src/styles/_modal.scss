@@ -37,8 +37,16 @@ box-shadow: -1px 5px 10px 0px rgba(0,0,0,0.75);
 outline: none;
 font-size: 1rem;
 padding: 2rem;
-width: 25%;
+width: 40%;
 text-align: center;
+
+.size-chart-wrapper {
+    position: relative;   
+}
+
+@media (max-width: $breakpoint) {
+    width: 100vw;
+}
 
 
 }
