@@ -1,7 +1,9 @@
 .share-block {
     display: flex;
     align-items: center;
-    
+    div:focus{
+        outline: none;
+    }
 }
 
 .share-block::before {

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react"
 import { graphql } from "gatsby"
 import Modal from "react-modal"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import SizeSelect from "../components/size-select"
 import cartContext from "../context/cartContext"
 import ProductInfo from "../components/productInfo"
@@ -15,12 +16,11 @@ export default function Product({ data }) {
   const [size, selectSize] = useState("")
   const [modalOpen, setModalOpen] = useState(undefined)
   
-  const productData = data.markdownRemark
-
+  const { title, path, image, salePrice, listPrice } = data.markdownRemark.frontmatter
   const images = data.allFile.edges
 
   const orderedImages =
-    productData.frontmatter.image.childImageSharp.fluid.src !==
+    image.childImageSharp.fluid.src !==
     images[0].node.childImageSharp.fluid.src
       ? [images[1], images[0]]
       : images
@@ -47,15 +47,16 @@ export default function Product({ data }) {
     }
     dispatch({
       type: "ADD_PRODUCT",
-      title: productData.frontmatter.title,
-      salePrice: productData.frontmatter.salePrice,
-      image: productData.frontmatter.image.childImageSharp.fluid,
+      title: title,
+      salePrice: salePrice,
+      image: image.childImageSharp.fluid,
       size,
     })
   }
 
   return (
     <Layout>
+      <SEO title image={image.childImageSharp.fluid}/>
       <div className="container__product">
         <ProductImagePicker
           orderedImages={orderedImages}
@@ -64,22 +65,23 @@ export default function Product({ data }) {
         />
 
         <div className="product-data">
-          <h2 className="title">{productData.frontmatter.title}</h2>
+          <h2 className="title">{title}</h2>
           <h4>
             List Price:{" "}
             <span className="list-price">
-              {productData.frontmatter.listPrice}
+              {listPrice}
             </span>
           </h4>
           <h2 className="sale-price">
-            Sale Price: {productData.frontmatter.salePrice}
+            Sale Price: {salePrice}
           </h2>
           <SizeSelect handleSelectSize={handleSelectSize} />
-          <div dangerouslySetInnerHTML={{ __html: productData.html }} />
+          <h4 className="size-chart" onClick={() => setModalOpen('size')}>See Size Chart</h4>
+          
           <button onClick={addToCart}>ADD TO CART</button>
-          <h4 onClick={() => setModalOpen('size')}>See Size Chart</h4>
+          
           <ProductInfo />
-          <Share url={productData.frontmatter.path} />
+          <Share url={`https://www.thishoodie.com${path}`} />
           <div className="product-options">
             <ul>
               <li onClick={() => setModalOpen('shipping')}>Shipping</li>
