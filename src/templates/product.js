@@ -56,7 +56,7 @@ export default function Product({ data }) {
 
   return (
     <Layout>
-      <SEO title image={image.childImageSharp.fluid}/>
+      <SEO title={title} image={image.childImageSharp.fluid}/>
       <div className="container__product">
         <ProductImagePicker
           orderedImages={orderedImages}
