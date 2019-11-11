@@ -23,6 +23,10 @@
         >td {
             border: none;
             display: inline-block;
+
+            span {
+                cursor: pointer;
+            }
         }
         
     }

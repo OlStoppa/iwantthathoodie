@@ -10,6 +10,7 @@ import Share from "../components/share"
 import ProductImagePicker from "../components/productImagePicker"
 import ProductModalInner from "../components/productModalInner"
 
+
 export default function Product({ data }) {
   const [state, dispatch] = useContext(cartContext)
   const [selectedImage, setSelected] = useState(0)
@@ -95,6 +96,8 @@ export default function Product({ data }) {
         isOpen={!!modalOpen}
         onRequestClose={closeModal}
         className="modal"
+        ariaHideApp={false}
+        
       >
        <ProductModalInner content={modalOpen}/> 
       </Modal>

@@ -11,6 +11,9 @@ const Drawer = props => {
       
       <div className="mobile-nav-container">
         <ul>
+        <Link to="/collection/pullover"><li>Pullovers</li></Link>
+        <Link to="/collection/t-shirt"><li>T-Shirts</li></Link>
+        <Link to="/collection/pullover"><li>New</li></Link>
          
           <Link to="/contact"><li>Contact Us</li></Link>
         </ul>

@@ -11,7 +11,9 @@ const Navbar = () => (
             <Link to="/collection/t-shirt">
             <li>T-SHIRTS</li>
             </Link>
+            <Link to="/collection/t-shirt">
             <li>NEW</li>
+            </Link>
         </ul>
     </nav>
 )

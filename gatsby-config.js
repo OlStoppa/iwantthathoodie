@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `this-hoodie`,
+    title: `This-hoodie`,
     description: `The Coolest hoodies and tops`,
     author: `this-hoodie`,
   },
@@ -48,13 +48,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `this-hoodie`,
+        short_name: `TH`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/th-fav.png`, // This path is relative to the root of the site.
       },
     },
     {
